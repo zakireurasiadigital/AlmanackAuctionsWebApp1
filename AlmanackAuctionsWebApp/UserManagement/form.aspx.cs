@@ -25,7 +25,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
             RoleID = Convert.ToInt32(Session["RoleID"]);
             if (!Page.IsPostBack)
             {
-               
+
                 if (RoleID != 1)
                 {
                     txtCompanyName.Text = Convert.ToString(Session["CompanyName"]);
@@ -73,6 +73,16 @@ namespace AlmanackAuctionsWebApp.UserManagement
             objUser.AgentID = AgentID;
             objUser.UpdateByUserID = UrlUserID > 0 ? UserID : 0;
             objUser.DateUpdated = UrlUserID > 0 ? DateTime.Now : default(DateTime?);
+
+            if (RoleID == 1)
+            {
+                objUser.is_ListingUser = false;
+                objUser.is_BidderUser = false;
+                objUser.isAgnetUser_Listing_Allowed = false;
+                objUser.isAgnetUser_Bidder_Allowed = false;
+                objUser.is_Listing_Allowed = false;
+            }
+
             try
             {
                 //aa=aa
@@ -80,7 +90,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
             }
             catch (Exception ex)
             {
-                
+
             }
         }
         void SaveRole()
@@ -101,10 +111,10 @@ namespace AlmanackAuctionsWebApp.UserManagement
         {
             if (Page.IsValid)
             {
-                if (txtUserName.Text == "" || txtPassword.Text == "" || txtCompanyName.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" || txtPostCode.Text == "" || (txtEmail.Text == "" && RoleID ==1))
+                if (txtUserName.Text == "" || txtPassword.Text == "" || txtCompanyName.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" || txtPostCode.Text == "" || (txtEmail.Text == "" && RoleID == 1))
                 {
                     lblErrorMessage.Text = "Please fill in all required fields.";
-                    return; 
+                    return;
                 }
                 DataTable dt = objUser.GetAgentID(txtCompanyName.Text);
                 int agentID = 0;

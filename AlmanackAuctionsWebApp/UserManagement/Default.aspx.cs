@@ -36,8 +36,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         }
         protected void gvMain_Sorting(object sender, GridViewSortEventArgs e)
         {
-          
-            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID); 
+            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID);
             if (dt != null)
             {
                 dt.DefaultView.Sort = e.SortExpression + " " + GetSortDirection(e.SortExpression);
@@ -48,7 +47,6 @@ namespace AlmanackAuctionsWebApp.UserManagement
         private void BindGridViewForSearch()
         {
             DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID);
-
             if (dt != null)
             {
                 string searchValue = txtSearch.Text.Trim();

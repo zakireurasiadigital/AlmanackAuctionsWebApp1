@@ -15,7 +15,7 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
             m_strTableName = "tblUsers";
             m_strPrimaryFieldName = "UserID";
             m_enPrimaryFieldDataType = SQLManager.DataTypes.LongType;
-        } 
+        }
 
         public long UserID { get; set; }
         public string UserName { get; set; }
@@ -32,6 +32,13 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
         public long? AgentID { get; set; }
         public DateTime? DateUpdated { get; set; }
         public long? UpdateByUserID { get; set; }
+
+        public bool? is_ListingUser { get; set; }
+        public bool? is_BidderUser { get; set; }
+        public bool? isAgnetUser_Listing_Allowed { get; set; }
+        public bool? isAgnetUser_Bidder_Allowed { get; set; }
+        public bool? is_Listing_Allowed { get; set; }
+
         public void SaveUser()
         {
             try
@@ -56,12 +63,12 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
             catch (Exception) { }
             return null;
         }
-        public DataTable GetUserDetailsForView(int RoleID,int UserID)
+        public DataTable GetUserDetailsForView(int RoleID, int UserID)
         {
             string str = "";
             if (RoleID == 1)
             {
-                str += "Select *,CASE WHEN IsActive = 0 THEN 'No' ELSE 'Yes' End as Status from tblUsers where AgentUserID = 0 ";
+                str += "Select *,CASE WHEN IsActive = 0 THEN 'No' ELSE 'Yes' End as Status from tblUsers where AgentUserID = 0 AND userid <>1 ";
             }
             else if (RoleID != 1)
             {
@@ -76,7 +83,7 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
         }
         public DataTable GetUserDetailsForEdit(int UserID)
         {
-            string str = "Select * from tblUsers where UserID = "+ UserID + " ";
+            string str = "Select * from tblUsers where UserID = " + UserID + " ";
             try
             {
                 return this.GetDataTable(str);
@@ -86,7 +93,7 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
         }
         public DataTable GetAgentID(string CompanyName)
         {
-            string str = "Select AgentID from tblAgents where AgentName = '"+ CompanyName + "' ";
+            string str = "Select AgentID from tblAgents where AgentName = '" + CompanyName + "' ";
             try
             {
                 return this.GetDataTable(str);
@@ -96,7 +103,7 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
         }
         public void InsertAgent(string AgentName)
         {
-            string str = "INSERT INTO tblAgents VALUES ('"+ AgentName + "',GETDATE())";
+            string str = "INSERT INTO tblAgents VALUES ('" + AgentName + "',GETDATE())";
             try
             {
                 this.ExecuteNonQuery(str);
@@ -115,7 +122,7 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
         }
         public void InsertLoginUser(int UserID)
         {
-            string str = "INSERT INTO tblLoginLog VALUES ("+ UserID + ",'','','',GETDATE())";
+            string str = "INSERT INTO tblLoginLog VALUES (" + UserID + ",'','','',GETDATE())";
             try
             {
                 this.ExecuteNonQuery(str);
