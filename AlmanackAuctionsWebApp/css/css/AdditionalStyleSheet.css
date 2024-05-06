@@ -1,0 +1,51 @@
+﻿.UpperClass {
+    text-transform: uppercase;
+}
+
+table.summaryDetails {
+    margin-top: 20px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+    table.summaryDetails tr {
+        width: 100%;
+        background: #eee;
+    }
+
+    table.summaryDetails th {
+        color: #202020;
+        font-size: 14px;
+        font-weight: 700;
+        width: 140px;
+        text-align: left;
+        padding: 0 0 0 10px;
+        height: 32px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+        table.summaryDetails th.summaryDetailsMain {
+            background: #999;
+            border: none;
+            color: #fff;
+            padding: 0 10px;
+            font-size: 14px;
+            font-weight: 700;
+            height: 32px;
+        }
+
+    table.summaryDetails td {
+        color: #202020;
+        font-size: 14px;
+        text-align: left;
+        width: 260px;
+        padding: 0 10px 0 0;
+        font-weight: 700;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+        table.summaryDetails td strong {
+            font-weight: 700;
+        }
+ 

@@ -1,0 +1,497 @@
+﻿
+
+/* Listing page (Default.aspx) Style **************************************/
+.headertable {
+    width: 95%;
+    border: Solid 2px #DCE6EA;
+}
+/*.headertable_left {font-size:14px;font-weight:bold;width:70px; vertical-align:top;}
+.headertable_colon {font-size:14px;font-weight:bold;vertical-align:top;width:5px;}*/
+.headertable_left {
+    font-size: 14px;
+    font-weight: bold;
+    width: 70px;
+}
+
+.headertable_colon {
+    font-size: 14px;
+    font-weight: bold;
+    width: 5px;
+}
+
+.headertable_filtertable {
+    background-color: #F3F7F8;
+    width: 100%;
+}
+
+.headertable_stat_sep {
+    border-left: Solid 1px #97B1BD;
+}
+
+.headertable_span {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.headertable_span_lbl {
+    font-weight: bold;
+    font-size: 14px;
+}
+/****************************************************************/
+
+
+/* Grid Style *************************************************/
+.gridviewclass table {
+    width: auto;
+}
+
+.gridviewclass .mouseover {
+    background-color: #b0d2df;
+    color: #FFFFFF;
+}
+
+.gridviewclass .rowstyle {
+    background-color: #ffffff;
+}
+/*.gridviewclass .rowstyle {background-color: #CCCCCC;}*/
+
+.gridviewclass .alternaterowstyle {
+    background-color: #F3F7F8;
+}
+/*.gridviewclass .alternaterowstyle {background-color: #DADADA;}*/
+
+.grid_page_no {
+    color: #ff0000;
+}
+
+    .grid_page_no a {
+        color: #000000;
+    }
+
+.grid_header {
+    color: #000000;
+}
+
+    .grid_header th a:link {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .grid_header th a:hover {
+        color: #ff0000;
+        text-decoration: none;
+    }
+
+    .grid_header th a:visited {
+        color: #000000;
+        text-decoration: none;
+    }
+/****************************************************************/
+
+
+/*FORM VIEW CSS*/
+/* General Classes */
+.pageHeading {
+    font-size: 24px;
+    color: #4A6B79;
+    border-bottom: solid 1px #999999;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+
+/* Table Styles */
+.tables_table {
+    border-left: 1px solid #CEDCE2;
+    border-top: 1px solid #CEDCE2;
+    color: #000000;
+}
+
+.tables_table_full_border {
+    border: 1px solid #CEDCE2;
+}
+
+.tables_headercell {
+    background-color: #CEDCE2;
+    border-color: #B5D3DF;
+    border-style: solid;
+    border-width: 1px;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.tables_2ndheadercell {
+    background-color: #CEDCE2;
+    border-color: #B5D3DF;
+    border-style: solid;
+    border-width: 1px;
+    color: #000000;
+    padding: 5px;
+}
+
+.tables_contentcell {
+    background-color: #FFFFFF;
+    border-color: #B5D3DF;
+    border-style: solid;
+    border-width: 1px;
+    color: #000000;
+    font-size: 10px;
+    padding: 5px;
+}
+
+.content {
+    margin-top: 25px;
+}
+
+.tables_contentcell_altern {
+    background-color: white;
+    color: #000000;
+    font-family: Verdana,Sans-Serif;
+    font-size: 10px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+}
+
+.formbutton {
+    background-color: #B5D3DF;
+    border-color: #B5D3DF;
+    border-style: solid;
+    border-width: 1px;
+    color: #FFFFFF;
+    font-family: Verdana,Sans-Serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+/*
+tr.row1 {color: #333333; background-color: #EFEFEF;}
+tr.row2 {color: #333333; background-color: #ffffff;}
+tr.row3 {color: #333333; background-color: #EFEFEF;}
+*/
+
+table.mainGrid tr td a {
+    color: #666666
+}
+
+    table.mainGrid tr td a:visited {
+        color: #666666
+    }
+
+    table.mainGrid tr td a.top {
+        color: #333333
+    }
+
+td.grey {
+    background-color: #cccccc;
+}
+
+    td.grey a {
+        color: black;
+    }
+/*FORM VIEW CSS*/
+
+
+/* ADMIN GRID */
+.wrapper {
+    border: 1px solid black;
+}
+
+.columnheader {
+    text-align: left;
+    margin: 5px;
+    padding: 5px;
+    background-color: #DCE6EA;
+    color: black;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+    .columnheader a:active {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .columnheader a:link {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .columnheader a:visited {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .columnheader a:hover {
+        color: #000000;
+        text-decoration: underline;
+    }
+
+.row1 {
+    margin: 5px;
+    padding: 5px;
+    font-size: 11px;
+    color: black;
+    border-top: 1px solid black;
+}
+
+    .row1 a:active {
+        color: black;
+    }
+
+    .row1 a:link {
+        color: black;
+    }
+
+    .row1 a:visited {
+        color: black;
+    }
+
+    .row1 a:hover {
+        color: #950015;
+        text-decoration: underline;
+    }
+
+.row2 {
+    margin: 5px;
+    padding: 5px;
+    font-size: 11px;
+    color: black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+    .row2 a:active {
+        color: black;
+    }
+
+    .row2 a:link {
+        color: black;
+    }
+
+    .row2 a:visited {
+        color: black;
+    }
+
+    .row2 a:hover {
+        color: #950015;
+        text-decoration: underline;
+    }
+
+.row_over {
+    margin: 5px;
+    padding: 5px;
+    background-color: #FFFFCC;
+    font-size: 11px;
+    color: #e3e3e3;
+}
+
+    .row_over a:active {
+        color: black;
+    }
+
+    .row_over a:link {
+        color: black;
+    }
+
+    .row_over a:visited {
+        color: black;
+    }
+
+    .row_over a:hover {
+        color: #950015;
+        text-decoration: underline;
+    }
+
+/*
+.pagnation{ padding-top:15px; font-size:11px; color:#666666; padding-bottom:15px}
+.pagnation li{ float:left; padding-right:5px}
+.pagnation a:hover, .pagnation .activpage a{ color:#000; background-color:#DCE6EA}
+.pagnation a{ border:1px solid #333; padding:3px 8px 3px 8px; display:block; color:#000; text-decoration:none; background-color:#FFFFFF}
+.pagnation .previous a{ background:url(images/previous.png) 7px 10px no-repeat; padding-left:20px}
+.next a{ padding-right:20px; background: url(images/next.png)  37px 10px no-repeat;}
+.pagnation  .noprev  a{ color:#cccccc; border:1px solid #cccccc}
+.pagnation li.next{ padding-right:0} */
+
+
+
+.pagnation {
+    padding-top: 15px;
+    font-size: 11px;
+    color: #666666;
+    padding-bottom: 15px
+}
+
+    .pagnation li {
+        float: left;
+        padding-right: 5px
+    }
+
+    .pagnation a:hover, .pagnation .activpage a {
+        color: #000;
+        background-color: #DCE6EA
+    }
+
+    .pagnation a {
+        border: 1px solid #333;
+        padding: 3px 8px 3px 8px;
+        display: block;
+        color: #000;
+        text-decoration: none;
+        background-color: #FFFFFF
+    }
+
+    .pagnation .previous a {
+        background: url(images/previous.png) 7px 10px no-repeat;
+        padding-left: 20px
+    }
+
+.next a {
+    padding-right: 20px;
+    background: url(images/next.png) 37px 10px no-repeat;
+}
+
+.pagnation .noprev a {
+    color: #cccccc;
+    border: 1px solid #cccccc
+}
+
+.pagnation li.next {
+    padding-right: 0
+}
+
+
+/* ADMIN VIEW PAGE */
+
+.detailTable {
+}
+
+    .detailTable .tdhead {
+        font-weight: bold;
+        text-align: right;
+        vertical-align: top;
+    }
+
+#viewpage {
+    margin: 4px;
+}
+
+    #viewpage .leftsection {
+        float: left;
+        width: 560px;
+    }
+
+    #viewpage .rightsection {
+        float: left;
+        width: 340px;
+        margin-left: 10px;
+    }
+
+    #viewpage .box {
+        width: 558px;
+        border: 2px solid #DCE6EA;
+        margin-bottom: 15px;
+    }
+
+        #viewpage .box .top {
+            padding: 4px;
+            background-color: #DCE6EA;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333
+        }
+
+        #viewpage .box .inner {
+            padding: 15px;
+            background-color: #F3F7F8;
+        }
+
+    #viewpage .boxheading {
+        font-size: 18px;
+        color: #444;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+a.viewbutton {
+    float: left;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    display: block;
+    width: 150px;
+    text-decoration: none;
+    border: 1px solid #DCE6EA;
+    text-align: center;
+    background-color: #F3F7F8;
+    padding: 5px;
+    color: #4A6B79;
+    font-size: 12px;
+}
+
+    a.viewbutton:hover {
+        background-color: #97B1BD;
+        color: #FFF;
+        border: 1px solid #97B1BD;
+    }
+
+a.navbutton {
+    float: left;
+    margin-left: 5px;
+    display: block;
+    text-decoration: none;
+    border: 1px solid #DCE6EA;
+    text-align: center;
+    background-color: #F3F7F8;
+    padding: 3px;
+    color: #4A6B79;
+    font-size: 11px;
+}
+
+    a.navbutton:hover {
+        background-color: #97B1BD;
+        color: #FFF;
+        border: 1px solid #97B1BD;
+    }
+
+a.homebutton {
+    float: left;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    display: block;
+    width: 190px;
+    text-decoration: none;
+    border: 1px solid #97B1BD;
+    text-align: center;
+    background-color: #F3F7F8;
+    padding: 5px;
+    color: #4A6B79;
+    font-size: 12px;
+}
+
+    a.homebutton:hover {
+        background-color: #97B1BD;
+        color: #FFF;
+        border: 1px solid #97B1BD;
+    }
+
+a.normalbutton {
+    margin-left: 5px;
+    text-decoration: none;
+    border: 1px solid #DCE6EA;
+    text-align: center;
+    background-color: #F3F7F8;
+    padding: 8px;
+    color: #4A6B79;
+    font-size: 11px;
+}
+
+    a.normalbutton:hover {
+        background-color: #97B1BD;
+        color: #FFF;
+        border: 1px solid #97B1BD;
+    }

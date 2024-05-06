@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.33529.398
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmanackAuctionsWebApp", "AlmanackAuctionsWebApp\AlmanackAuctionsWebApp.csproj", "{97760152-B6F9-490F-A694-18F0B4AE454E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97760152-B6F9-490F-A694-18F0B4AE454E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97760152-B6F9-490F-A694-18F0B4AE454E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97760152-B6F9-490F-A694-18F0B4AE454E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97760152-B6F9-490F-A694-18F0B4AE454E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A925AAA-AC22-4926-81BB-B7C553799BD9}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,222 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="AlmanackAuctionsWebApp.MasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <style>
+        #clock {
+            font-size: 18px;
+            margin-right: 10px;
+            font-family: 'Inter', sans-serif;
+            border: 1px solid #fff;
+            padding: 5px 10px;
+            font-weight: bold;
+            width: 100px;
+        }
+
+        .nav-item {
+            margin-right: 5px;
+        }
+
+            .nav-item a {
+                text-decoration: none;
+            }
+
+        .btn-call {
+            color: #fff;
+        }
+
+        .dropdown-menu {
+            background-color: #333;
+        }
+
+        .dropdown-item {
+            color: #fff;
+        }
+    </style>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Red+Hat+Display:wght@900&display=swap"
+        rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+    <link rel="stylesheet" href="https://github.hubspot.com/odometer/themes/odometer-theme-car.css">
+    <link href="css/css/style.css" rel="stylesheet">
+    <link href="css/css/responsive.css" rel="stylesheet">
+    <link href="css/css/AdditionalStyleSheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="https://api.feefo.com/api/javascript/remove-my-car" async></script>
+
+    <script src="css/js/jquery.min.js"></script>
+    <script src="css/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="css/js/main.js"></script>
+
+    <link rel="stylesheet" href="css/css/styles_grid.css" type="text/css" />
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="" id="MasterPageBodyTag" runat="server">
+    <form id="frmMain" runat="server">
+        <div>
+        </div>
+        <div class="wrapper quote-page">
+            <header id="logo">
+                <nav class="navbar navbar-expand-xl">
+                    <div class="container">
+                        <a class="navbar-brand" href="/">
+                            <img src="/css/images/logo-1.svg" alt="" class="img-fluid"></a>
+                        <div class="d-flex">
+                            <ul class="d-flex align-items-center">
+                                <!-- Remove the "Contact Us" button -->
+                            </ul>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" fill="#25a1d5" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto hide-nav align-items-center">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/">
+                                        <img
+                                            src="/css/images/home.svg" alt="" class="img-fluid"></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/aboutus.aspx">About Us</a>
+                                </li>
+                                <li class="nav-item d-xl-block d-none">
+                                    <a class=" btn-call" href="tel:0330 159 1588">
+                                        <img src="/css/images/call.svg" alt=""
+                                            class="img-fluid"></a>
+                                </li>
+                                <!-- Clock and Dropdown Button -->
+                                <div id="clock"></div>
+                                <li class="nav-item d-xl-block">
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary dropdown-toggle" style="margin-top: auto;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Welcome, <% Response.Write(Session["CompanyName"]); %>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="javascript:void(0)">★★★★★</a>
+                                            <a class="dropdown-item" href="#">Contact Us</a>
+                                            <a class="dropdown-item" href="#" id="logoutBtn">Log Out</a>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <div class="container">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <footer>
+                <div class="container">
+                    <a href="tel:0330 159 1588" class="call-link d-md-none d-block">
+                        <img src="css/images/blue-call.svg" alt=""
+                            class="img-fluid">0330 159
+                         1588</a>
+                     
+                </div>
+
+            </footer>
+            <div class="bottom-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                &copy; Copyright © 2024 - elv-almanack 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+            <script>
+                function updateTime() {
+                    var now = new Date();
+
+                    var utcHours = now.getUTCHours();
+                    var utcMinutes = now.getUTCMinutes();
+                    var utcSeconds = now.getUTCSeconds();
+
+                    var localHours = utcHours + 5;
+                    var localMinutes = utcMinutes;
+
+                    localHours = (localHours < 10 ? "0" : "") + localHours;
+                    localMinutes = (localMinutes < 10 ? "0" : "") + localMinutes;
+                    utcSeconds = (utcSeconds < 10 ? "0" : "") + utcSeconds;
+
+
+                    if (localMinutes >= 60) {
+                        localMinutes -= 60;
+                        localHours++;
+                    }
+
+
+                    localHours %= 24;
+
+                    // Update clock element
+                    document.getElementById("clock").innerText = localHours + ":" + localMinutes + ":" + utcSeconds;
+
+                    // Update every second
+                    setTimeout(updateTime, 1000);
+                }
+                window.onload = updateTime;
+
+
+
+
+
+
+                document.getElementById('logoutBtn').addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent the default link behavior (navigation)
+
+                    // Perform logout action
+                    logout();
+                });
+
+                function logout() {
+                    // Abandon the session
+                    sessionStorage.clear();
+
+                    // Redirect to the login page
+                    window.location.href = '/Login.aspx';
+                }
+
+
+
+            </script>
+
+
+
+        </div>
+    </form>
+</body>
+</html>
