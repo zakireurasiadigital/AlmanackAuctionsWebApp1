@@ -74,6 +74,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
             objUser.DateUpdated = UrlUserID > 0 ? DateTime.Now : default(DateTime?);
             try
             {
+
                 objUser.SaveUser();
             }
             catch (Exception ex)
