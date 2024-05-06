@@ -127,19 +127,10 @@
 
             <div class="container">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                  
                 </asp:ContentPlaceHolder>
             </div>
 
-            <footer>
-                <div class="container">
-                    <a href="tel:0330 159 1588" class="call-link d-md-none d-block">
-                        <img src="css/images/blue-call.svg" alt=""
-                            class="img-fluid">0330 159
-                         1588</a>
-                     
-                </div>
-
-            </footer>
             <div class="bottom-footer">
                 <div class="container">
                     <div class="row">
