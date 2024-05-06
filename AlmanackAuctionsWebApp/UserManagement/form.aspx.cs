@@ -83,6 +83,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
                 objUser.is_Listing_Allowed = false;
             }
 
+
             try
             {
                 //aa=aa
