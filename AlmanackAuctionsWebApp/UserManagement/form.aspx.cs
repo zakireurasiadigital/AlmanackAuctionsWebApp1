@@ -19,6 +19,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         int UrlUserID, RoleID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            // this is new changes for tesing github
             UrlUserID = Convert.ToInt32(Request.QueryString["i"]);
             UserID = Convert.ToInt32(Session["UserId"]);
             RoleID = Convert.ToInt32(Session["RoleID"]);
