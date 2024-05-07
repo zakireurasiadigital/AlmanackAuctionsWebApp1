@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace AlmanackAuctionsWebApp.UserManagement
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class DefaultUsers : System.Web.UI.Page
     {
         tblusers objUser = new tblusers();
         int UserID, RoleID;
@@ -27,7 +27,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
 
         private void BindGridView()
         {
-            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID, "0");
+            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID,"1");
             if (dt != null && dt.Rows.Count > 0)
             {
                 gvMain.DataSource = dt;
@@ -36,7 +36,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         }
         protected void gvMain_Sorting(object sender, GridViewSortEventArgs e)
         {
-            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID, "0");
+            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID, "1");
             if (dt != null)
             {
                 dt.DefaultView.Sort = e.SortExpression + " " + GetSortDirection(e.SortExpression);
@@ -46,7 +46,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         }
         private void BindGridViewForSearch()
         {
-            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID, "0");
+            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID, "1");
             if (dt != null)
             {
                 string searchValue = txtSearch.Text.Trim();

@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AlmanackAuctionsWebApp.UserManagement.Default" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="DefaultUsers.aspx.cs" Inherits="AlmanackAuctionsWebApp.UserManagement.DefaultUsers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <style>
@@ -150,7 +149,7 @@
                     <a class="nav-link active" id="add-region-tab" data-bs-toggle="tab" href="#add-region" role="tab" aria-controls="add-region" aria-selected="true">Options</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="add-user-tab" data-bs-toggle="tab" href="form.aspx?i=0&t=0" role="tab" aria-controls="add-user" aria-selected="false">Add Admin Agent User</a>
+                    <a class="nav-link" id="add-user-tab" data-bs-toggle="tab" href="FormUsers.aspx?i=0&t=0" role="tab" aria-controls="add-user" aria-selected="false">Add Agent Users</a>
                 </li>
             </ul>
         </div>
@@ -170,7 +169,7 @@
                     <asp:BoundField DataField="DateAdded" HeaderText="Created On" DataFormatString="{0:dd/MM/yyyy}" SortExpression="DateAdded" ItemStyle-HorizontalAlign="Center" />
                     <asp:TemplateField HeaderText="Edit" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
-                            <asp:LinkButton ID="lbtnEdit" PostBackUrl='<%# Eval("UserID", "~/UserManagement/FormEdit.aspx?i={0}") %>' runat="server">
+                            <asp:LinkButton ID="lbtnEdit" PostBackUrl='<%# Eval("UserID", "~/UserManagement/FormUsersEdit.aspx?i={0}") %>' runat="server">
                     <i class="fas fa-pencil-alt" style="color: seagreen;" title="Click here to edit" ></i>
                             </asp:LinkButton>
                         </ItemTemplate>

@@ -50,6 +50,7 @@
         <div class="button-container">
             <asp:Button ID="btnListings" runat="server" Text="Listings" OnClick="btnListings_Click" CssClass="btn btn-msg" />
             <asp:Button ID="btnUsers" runat="server" Text="Users" OnClick="btnUsers_Click" CssClass="btn btn-sell" />
+            <asp:Button ID="btnAddBidders" runat="server" OnClick="btnAddBidders_Click" Text="Bidder Users" CssClass="btn btn-review" />
             <asp:Button ID="btnAdminUsers" runat="server" OnClick="btnAdminUsers_Click" Text="Admin Agent Users" CssClass="btn btn-review" />
         </div>
 

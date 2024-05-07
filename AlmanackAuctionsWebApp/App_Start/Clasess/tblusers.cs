@@ -32,9 +32,7 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
         public long? AgentID { get; set; }
         public DateTime? DateUpdated { get; set; }
         public long? UpdateByUserID { get; set; }
-
-        public bool? is_ListingUser { get; set; }
-        public bool? is_BidderUser { get; set; }
+        public long? AgentUserType { get; set; }
         public bool? isAgnetUser_Listing_Allowed { get; set; }
         public bool? isAgnetUser_Bidder_Allowed { get; set; }
         public bool? is_Listing_Allowed { get; set; }
@@ -63,7 +61,7 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
             catch (Exception) { }
             return null;
         }
-        public DataTable GetUserDetailsForView(int RoleID, int UserID)
+        public DataTable GetUserDetailsForView(int RoleID, int UserID,string AgentUserType)
         {
             string str = "";
             if (RoleID == 1)
@@ -72,7 +70,7 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
             }
             else if (RoleID != 1)
             {
-                str += "Select *,CASE WHEN IsActive = 0 THEN 'No' ELSE 'Yes' End as Status from tblUsers where AgentUserID = " + UserID + " ";
+                str += "Select *,CASE WHEN IsActive = 0 THEN 'No' ELSE 'Yes' End as Status from tblUsers where AgentUserID = " + UserID + " and AgentUserType = '"+ AgentUserType + "' ";
             }
             try
             {
@@ -128,6 +126,63 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
                 this.ExecuteNonQuery(str);
             }
             catch (Exception) { }
+        }
+        public DataTable CheckUserNameExist(string UserName,int UserID)
+        {
+            string str = "Select * from tblUsers where UserName = '" + UserName + "' and UserID <> "+ UserID + " ";
+            try
+            {
+                return this.GetDataTable(str);
+            }
+            catch (Exception) { }
+            return null;
+        }
+        public DataTable CheckEmailExist(string Email, int UserID)
+        {
+            string str = "Select * from tblUsers where Email = '" + Email + "' and UserID <> "+ UserID + " ";
+            try
+            {
+                return this.GetDataTable(str);
+            }
+            catch (Exception) { }
+            return null;
+        }
+        public void UpdateUserSuperAdmin(string UserName,string CompanyName,string FirstName,string LastName,string Address,string Postcode,string Email,bool IsActive,int AgentID, int UpdateByUserID,int UserID)
+        {
+            string str = "UPDATE tblUsers SET UserName='"+ UserName + "',CompanyName='"+ CompanyName + "',FirstName='"+ FirstName + "',LastName='"+ LastName + "',Address='"+ Address + "',Postcode='"+ Postcode + "',Email='"+ Email + "',isActive='"+ IsActive + "',AgentID="+ AgentID + ",DateUpdated=GETDATE(),UpdateByUserID="+ UpdateByUserID + " WHERE UserID="+ UserID + "";
+            try
+            {
+                this.ExecuteNonQuery(str);
+            }
+            catch (Exception) { }
+        }
+        public void UpdateUserAdminUser(string UserName, string CompanyName, string FirstName, string LastName, string Address, string Postcode, bool IsActive, int AgentID, int UpdateByUserID, int UserID,bool isAgnetUser_Listing_Allowed,bool isAgnetUser_Bidder_Allowed,bool is_Listing_Allowed)
+        {
+            string str = "UPDATE tblUsers SET UserName='" + UserName + "',CompanyName='" + CompanyName + "',FirstName='" + FirstName + "',LastName='" + LastName + "',Address='" + Address + "',Postcode='" + Postcode + "',isActive='" + IsActive + "',AgentID=" + AgentID + ",DateUpdated=GETDATE(),UpdateByUserID=" + UpdateByUserID + ",isAgnetUser_Listing_Allowed='"+ isAgnetUser_Listing_Allowed + "',isAgnetUser_Bidder_Allowed = '"+ isAgnetUser_Bidder_Allowed + "',is_Listing_Allowed = '"+ is_Listing_Allowed + "' WHERE UserID=" + UserID + "";
+            try
+            {
+                this.ExecuteNonQuery(str);
+            }
+            catch (Exception) { }
+        }
+        public void UpdateUserBidder(string UserName, string CompanyName, string FirstName, string LastName, string Address, string Postcode, string Email, bool IsActive, int AgentID, int UpdateByUserID, int UserID)
+        {
+            string str = "UPDATE tblUsers SET UserName='" + UserName + "',CompanyName='" + CompanyName + "',FirstName='" + FirstName + "',LastName='" + LastName + "',Address='" + Address + "',Postcode='" + Postcode + "',Email='" + Email + "',isActive='" + IsActive + "',AgentID=" + AgentID + ",DateUpdated=GETDATE(),UpdateByUserID=" + UpdateByUserID + " WHERE UserID=" + UserID + "";
+            try
+            {
+                this.ExecuteNonQuery(str);
+            }
+            catch (Exception) { }
+        }
+        public DataTable RetrieveUserData(int userID)
+        {
+            string str = "Select is_Listing_Allowed,isAgnetUser_Listing_Allowed,isAgnetUser_Bidder_Allowed from tblUsers where UserID = "+userID+" ";
+            try
+            {
+                return this.GetDataTable(str);
+            }
+            catch (Exception) { }
+            return null;
         }
     }
 }

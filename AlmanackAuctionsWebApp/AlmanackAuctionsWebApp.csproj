@@ -270,7 +270,14 @@
     <Content Include="css\js\main.js" />
     <Content Include="css\js\odometer.js" />
     <Content Include="UserManagement\Default.aspx" />
-    <Content Include="UserManagement\form.aspx" />
+    <Content Include="UserManagement\DefaultBidder.aspx" />
+    <Content Include="UserManagement\DefaultUsers.aspx" />
+    <Content Include="UserManagement\Form.aspx" />
+    <Content Include="UserManagement\FormBidders.aspx" />
+    <Content Include="UserManagement\FormBiddersEdit.aspx" />
+    <Content Include="UserManagement\FormEdit.aspx" />
+    <Content Include="UserManagement\FormUsers.aspx" />
+    <Content Include="UserManagement\FormUsersEdit.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="css\backup\css\style.scss" />
     <Content Include="css\backup\fonts\monumentextended-ultrabold-webfont.woff" />
@@ -394,12 +401,61 @@
     <Compile Include="UserManagement\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserManagement\form.aspx.cs">
-      <DependentUpon>form.aspx</DependentUpon>
+    <Compile Include="UserManagement\DefaultBidder.aspx.cs">
+      <DependentUpon>DefaultBidder.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserManagement\form.aspx.designer.cs">
-      <DependentUpon>form.aspx</DependentUpon>
+    <Compile Include="UserManagement\DefaultBidder.aspx.designer.cs">
+      <DependentUpon>DefaultBidder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\DefaultUsers.aspx.cs">
+      <DependentUpon>DefaultUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\DefaultUsers.aspx.designer.cs">
+      <DependentUpon>DefaultUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\FormBidders.aspx.cs">
+      <DependentUpon>FormBidders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\FormBidders.aspx.designer.cs">
+      <DependentUpon>FormBidders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\FormBiddersEdit.aspx.cs">
+      <DependentUpon>FormBiddersEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\FormBiddersEdit.aspx.designer.cs">
+      <DependentUpon>FormBiddersEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\FormEdit.aspx.cs">
+      <DependentUpon>FormEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\FormEdit.aspx.designer.cs">
+      <DependentUpon>FormEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\FormUsers.aspx.cs">
+      <DependentUpon>FormUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\FormUsers.aspx.designer.cs">
+      <DependentUpon>FormUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\FormUsersEdit.aspx.cs">
+      <DependentUpon>FormUsersEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement\FormUsersEdit.aspx.designer.cs">
+      <DependentUpon>FormUsersEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

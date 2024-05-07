@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace AlmanackAuctionsWebApp.UserManagement
 {
-    public partial class Form : System.Web.UI.Page
+    public partial class FormBidders : System.Web.UI.Page
     {
         int UserID;
         tblusers objUser = new tblusers();
@@ -25,13 +25,6 @@ namespace AlmanackAuctionsWebApp.UserManagement
             RoleID = Convert.ToInt32(Session["RoleID"]);
             if (!Page.IsPostBack)
             {
-
-                if (RoleID != 1)
-                {
-                    txtCompanyName.Text = Convert.ToString(Session["CompanyName"]);
-                    DivCompnayName.Visible = false;
-                    DivEmail.Visible = false;
-                }
                 if (UrlUserID > 0)
                 {
                     DivPassWord.Visible = false;
@@ -48,12 +41,8 @@ namespace AlmanackAuctionsWebApp.UserManagement
             txtPassword.Text = dt.Rows[0]["Password"].ToString();
             txtFirstName.Text = dt.Rows[0]["FirstName"].ToString();
             txtLastName.Text = dt.Rows[0]["LastName"].ToString();
-            txtCompanyName.Text = dt.Rows[0]["CompanyName"].ToString();
             txtAddress.Text = dt.Rows[0]["Address"].ToString();
             txtPostCode.Text = dt.Rows[0]["PostCode"].ToString();
-            txtEmail.Text = dt.Rows[0]["Email"].ToString();
-            chkIsActive.Checked = Convert.ToBoolean(dt.Rows[0]["IsActive"]);
-            DivIsActive.Visible = true;
 
         }
         void SaveUser(int AgentID)
@@ -63,24 +52,20 @@ namespace AlmanackAuctionsWebApp.UserManagement
             objUser.Password = txtPassword.Text;
             objUser.FirstName = txtFirstName.Text;
             objUser.LastName = txtLastName.Text;
-            objUser.CompanyName = RoleID != 1 ? Convert.ToString(Session["CompanyName"]) : txtCompanyName.Text;
+            objUser.CompanyName = Convert.ToString(Session["CompanyName"]);
             objUser.Address = txtAddress.Text;
             objUser.Postcode = txtPostCode.Text;
             objUser.Email = txtEmail.Text;
             objUser.DateAdded = UrlUserID > 0 ? Convert.ToDateTime(objUser.GetDateAdded(UrlUserID)) : DateTime.Now;
-            objUser.IsActive = UrlUserID > 0 ? chkIsActive.Checked : true;
+            objUser.IsActive = true;
             objUser.AgentUserID = RoleID != 1 ? UserID : 0;
             objUser.AgentID = AgentID;
             objUser.UpdateByUserID = UrlUserID > 0 ? UserID : 0;
-            objUser.AgentUserType = RoleID == 1 ? 0 : 0;
+            objUser.AgentUserType = 2;
             objUser.DateUpdated = UrlUserID > 0 ? DateTime.Now : default(DateTime?);
-
-            if (RoleID == 1)
-            {
-                objUser.isAgnetUser_Listing_Allowed = true;
-                objUser.isAgnetUser_Bidder_Allowed = true;
-                objUser.is_Listing_Allowed = true;
-            }
+            objUser.isAgnetUser_Listing_Allowed =false;
+            objUser.isAgnetUser_Bidder_Allowed = true;
+            objUser.is_Listing_Allowed = false;
 
 
             try
@@ -97,14 +82,14 @@ namespace AlmanackAuctionsWebApp.UserManagement
         {
             objUserRole.UserRoleID = 0;
             objUserRole.UserID = (int)objUser.GetID();
-            objUserRole.RoleID = RoleID == 1 ? 2 : RoleID == 2 ? 3 : 0;
+            objUserRole.RoleID = 4;
             objUserRole.isActive = true;
             objUserRole.SaveData();
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx#add-region-tab");
+            Response.Redirect("DefaultBidder.aspx#add-region-tab");
         }
         private bool IsUserExists(string username, string email)
         {
@@ -126,7 +111,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         {
             if (Page.IsValid)
             {
-                if (txtUserName.Text == "" || txtPassword.Text == "" || txtCompanyName.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" || txtPostCode.Text == "" || (txtEmail.Text == "" && RoleID == 1))
+                if (txtUserName.Text == "" || txtPassword.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" || txtPostCode.Text == "" || txtEmail.Text == "")
                 {
                     lblErrorMessage.Text = "Please fill in all required fields.";
                     return;
@@ -138,7 +123,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
                     return;
                 }
 
-                DataTable dt = objUser.GetAgentID(txtCompanyName.Text);
+                DataTable dt = objUser.GetAgentID(Convert.ToString(Session["CompanyName"]));
                 int agentID = 0;
                 if (dt == null)
                 {
@@ -146,8 +131,8 @@ namespace AlmanackAuctionsWebApp.UserManagement
                 }
                 if (agentID == 0)
                 {
-                    objUser.InsertAgent(txtCompanyName.Text);
-                    DataTable dtt = objUser.GetAgentID(txtCompanyName.Text);
+                    objUser.InsertAgent(Convert.ToString(Session["CompanyName"]));
+                    DataTable dtt = objUser.GetAgentID(Convert.ToString(Session["CompanyName"]));
                     agentID = Convert.ToInt32(dtt.Rows[0]["AgentID"]);
                 }
 
@@ -157,7 +142,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
                     SaveRole();
                 }
 
-                Response.Redirect("Default.aspx#add-region-tab");
+                Response.Redirect("DefaultBidder.aspx#add-region-tab");
             }
             else
             {

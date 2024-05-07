@@ -7,47 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlmanackAuctionsWebApp
-{
-
-
-    public partial class Default
-    {
-
+namespace AlmanackAuctionsWebApp.UserManagement {
+    
+    
+    public partial class DefaultUsers {
+        
         /// <summary>
-        /// btnListings control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnListings;
-
+        protected global::System.Web.UI.WebControls.TextBox txtSearch;
+        
         /// <summary>
-        /// btnUsers control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUsers;
-
+        protected global::System.Web.UI.WebControls.Button btnSearch;
+        
         /// <summary>
-        /// btnAddBidders control.
+        /// ddlPageSize control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddBidders;
-
+        protected global::System.Web.UI.WebControls.DropDownList ddlPageSize;
+        
         /// <summary>
-        /// btnAdminUsers control.
+        /// gvMain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdminUsers;
+        protected global::System.Web.UI.WebControls.GridView gvMain;
     }
 }

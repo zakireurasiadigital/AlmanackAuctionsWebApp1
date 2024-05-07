@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Form.aspx.cs" Inherits="AlmanackAuctionsWebApp.UserManagement.Form" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="FormUsersEdit.aspx.cs" Inherits="AlmanackAuctionsWebApp.UserManagement.FormUsersEdit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -85,16 +85,6 @@
                                     <label for="txtUserName">User Name</label>
                                     <asp:TextBox ID="txtUserName" runat="server" placeholder="User Name" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="col-md-6" id="DivPassWord" runat="server" visible="true">
-                                    <label for="txtPassword">Password</label>
-                                    <asp:TextBox ID="txtPassword" runat="server" placeholder="Password" CssClass="form-control" TextMode="Password"></asp:TextBox>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-6" id="DivCompnayName" runat="server" visible="true">
-                                    <label for="lblCompanyName">Company Name</label>
-                                    <asp:TextBox ID="txtCompanyName" runat="server" placeholder="Company Name" CssClass="form-control"></asp:TextBox>
-                                </div>
                                 <div class="col-md-6">
                                     <label for="lblFirstName">First Name</label>
                                     <asp:TextBox ID="txtFirstName" runat="server" placeholder="First Name" CssClass="form-control"></asp:TextBox>
@@ -121,22 +111,37 @@
                                         <asp:TextBox ID="txtPostCode" runat="server" placeholder="Post Code" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
-                                <div class="col-md-6" id="DivEmail" runat="server" visible="true">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtPostCode">Email </label>
-                                        <asp:TextBox ID="txtEmail" runat="server" placeholder="Email" CssClass="form-control"></asp:TextBox>
-                                        <asp:RegularExpressionValidator ID="regEmail" runat="server" ControlToValidate="txtEmail"
-                                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                                            ErrorMessage="Please enter a valid email address"
-                                            CssClass="text-danger"
-                                            Display="Dynamic"></asp:RegularExpressionValidator>
+                                        <label for="txtPostCode">Is Active</label>
+                                        <asp:CheckBox ID="chksActive" runat="server"></asp:CheckBox>
 
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group" id="DivIsActive" runat="server" visible="false">
-                                <label for="txtPostCode">Is Active?</label>
-                                <asp:CheckBox ID="chkIsActive" runat="server"></asp:CheckBox>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="txtPostCode">Allow listing</label>
+                                        <asp:CheckBox ID="chkallowlisting" runat="server"></asp:CheckBox>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="txtPostCode">Allow adding Users</label>
+                                        <asp:CheckBox ID="chkallowaddingUsers" runat="server"></asp:CheckBox>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="txtPostCode">Allowing Bidders</label>
+                                        <asp:CheckBox ID="chkallowingBidders" runat="server"></asp:CheckBox>
+                                    </div>
+                                </div>
                             </div>
                             <!-- Buttons -->
                             <div class="btn-group" style="margin-top: 5px;">
