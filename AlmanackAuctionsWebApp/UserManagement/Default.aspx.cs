@@ -8,6 +8,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace AlmanackAuctionsWebApp.UserManagement
 {
     public partial class Default : System.Web.UI.Page
@@ -16,6 +17,9 @@ namespace AlmanackAuctionsWebApp.UserManagement
         int UserID, RoleID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            string ff = string.Empty;
+            ff = cFunction.Encrypt("eee");
+
             UserID = Convert.ToInt32(Session["UserId"]);
             RoleID = Convert.ToInt32(Session["RoleID"]);
             if (!IsPostBack)

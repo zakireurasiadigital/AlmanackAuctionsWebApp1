@@ -336,6 +336,7 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\Clasess\cFunction.cs" />
     <Compile Include="App_Start\Clasess\SQLManager.cs" />
     <Compile Include="App_Start\Clasess\tblusers.cs" />
     <Compile Include="App_Start\Clasess\tblUsersRole.cs" />
