@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace AlmanackAuctionsWebApp.UserManagement
 {
-    public partial class DefaultUsers : System.Web.UI.Page
+    public partial class UsersDefault : System.Web.UI.Page
     {
         tblusers objUser = new tblusers();
         int UserID, RoleID;

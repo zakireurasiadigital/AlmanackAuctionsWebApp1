@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="FormBidders.aspx.cs" Inherits="AlmanackAuctionsWebApp.UserManagement.FormBidders" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="BiddersForm.aspx.cs" Inherits="AlmanackAuctionsWebApp.UserManagement.BiddersForm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>

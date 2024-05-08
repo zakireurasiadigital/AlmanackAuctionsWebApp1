@@ -11,7 +11,7 @@ namespace AlmanackAuctionsWebApp
 {
     public partial class Default : System.Web.UI.Page
     {
-        int UserID, RoleID;
+        public int UserID, RoleID;
         tblusers objUser = new tblusers();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -67,12 +67,12 @@ namespace AlmanackAuctionsWebApp
 
         protected void btnUsers_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/UserManagement/DefaultUsers.aspx");
+            Response.Redirect("~/UserManagement/UsersDefault.aspx");
         }
 
         protected void btnAddBidders_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/UserManagement/DefaultBidder.aspx");
+            Response.Redirect("~/UserManagement/BidderDefault.aspx");
         }
 
         protected void btnAdminUsers_Click(object sender, EventArgs e)

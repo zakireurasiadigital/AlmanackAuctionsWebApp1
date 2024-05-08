@@ -11,7 +11,7 @@ namespace AlmanackAuctionsWebApp
 {
     public partial class MasterPage : System.Web.UI.MasterPage
     {
-        int UserId, RoleId;
+        public int UserId, RoleId;
         string CompanyName;
         protected int mintTimeout;
         protected void Page_Init(object sender, System.EventArgs e)

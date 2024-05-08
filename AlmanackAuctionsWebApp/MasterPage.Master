@@ -97,12 +97,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/aboutus.aspx">About Us</a>
-                                </li>
-                                <li class="nav-item d-xl-block d-none">
-                                    <a class=" btn-call" href="tel:0330 159 1588">
-                                        <img src="/css/images/call.svg" alt=""
-                                            class="img-fluid"></a>
-                                </li>
+                                </li> 
                                 <!-- Clock and Dropdown Button -->
                                 <div id="clock"></div>
                                 <li class="nav-item d-xl-block">
@@ -111,8 +106,12 @@
                                             Welcome, <% Response.Write(Session["CompanyName"]); %>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="javascript:void(0)">★★★★★</a>
-                                            <a class="dropdown-item" href="#">Contact Us</a>
+                                             <% if (RoleId == 1) { %>
+                                                    <div>
+                                                        <a class="dropdown-item" href="../UserManagement/Default.aspx">Admin Agent Users</a>
+                                                    </div>
+                                                <% } %>
+                                            
                                             <a class="dropdown-item" href="#" id="logoutBtn">Log Out</a>
                                         </div>
                                     </div>
@@ -127,7 +126,6 @@
 
             <div class="container">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                  
                 </asp:ContentPlaceHolder>
             </div>
 
@@ -181,11 +179,6 @@
                 }
                 window.onload = updateTime;
 
-
-
-
-
-
                 document.getElementById('logoutBtn').addEventListener('click', function (e) {
                     e.preventDefault(); // Prevent the default link behavior (navigation)
 
@@ -200,13 +193,7 @@
                     // Redirect to the login page
                     window.location.href = '/Login.aspx';
                 }
-
-
-
             </script>
-
-
-
         </div>
     </form>
 </body>

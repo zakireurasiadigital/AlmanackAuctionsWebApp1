@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="FormBiddersEdit.aspx.cs" Inherits="AlmanackAuctionsWebApp.UserManagement.FormBiddersEdit" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="UsersFormEdit.aspx.cs" Inherits="AlmanackAuctionsWebApp.UserManagement.UsersFormEdit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -111,15 +111,10 @@
                                         <asp:TextBox ID="txtPostCode" runat="server" placeholder="Post Code" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
-                                <div class="col-md-6" id="DivEmail" runat="server" visible="true">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtPostCode">Email </label>
-                                        <asp:TextBox ID="txtEmail" runat="server" placeholder="Email" CssClass="form-control"></asp:TextBox>
-                                        <asp:RegularExpressionValidator ID="regEmail" runat="server" ControlToValidate="txtEmail"
-                                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                                            ErrorMessage="Please enter a valid email address"
-                                            CssClass="text-danger"
-                                            Display="Dynamic"></asp:RegularExpressionValidator>
+                                        <label for="txtPostCode">Is Active</label>
+                                        <asp:CheckBox ID="chksActive" runat="server"></asp:CheckBox>
 
                                     </div>
                                 </div>
@@ -127,9 +122,24 @@
                             <div class="form-group row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtPostCode">Is Active</label>
-                                        <asp:CheckBox ID="chksActive" runat="server"></asp:CheckBox>
+                                        <label for="txtPostCode">Allow listing</label>
+                                        <asp:CheckBox ID="chkallowlisting" runat="server"></asp:CheckBox>
 
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="txtPostCode">Allow adding Users</label>
+                                        <asp:CheckBox ID="chkallowaddingUsers" runat="server"></asp:CheckBox>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="txtPostCode">Allowing Bidders</label>
+                                        <asp:CheckBox ID="chkallowingBidders" runat="server"></asp:CheckBox>
                                     </div>
                                 </div>
                             </div>

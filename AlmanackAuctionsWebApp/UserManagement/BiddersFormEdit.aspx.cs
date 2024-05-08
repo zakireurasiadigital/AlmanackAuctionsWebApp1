@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace AlmanackAuctionsWebApp.UserManagement
 {
-    public partial class FormUsersEdit : System.Web.UI.Page
+    public partial class BiddersFormEdit : System.Web.UI.Page
     {
         int UserID;
         tblusers objUser = new tblusers();
@@ -41,19 +41,17 @@ namespace AlmanackAuctionsWebApp.UserManagement
             txtLastName.Text = dt.Rows[0]["LastName"].ToString();
             txtAddress.Text = dt.Rows[0]["Address"].ToString();
             txtPostCode.Text = dt.Rows[0]["PostCode"].ToString();
+            txtEmail.Text = dt.Rows[0]["Email"].ToString();
             chksActive.Checked = Convert.ToBoolean(dt.Rows[0]["IsActive"]);
-            chkallowaddingUsers.Checked = Convert.ToBoolean(dt.Rows[0]["isAgnetUser_Listing_Allowed"]);
-            chkallowingBidders.Checked = Convert.ToBoolean(dt.Rows[0]["isAgnetUser_Bidder_Allowed"]);
-            chkallowlisting.Checked = Convert.ToBoolean(dt.Rows[0]["is_Listing_Allowed"]);
 
         }
         void SaveUser(int AgentID)
         {
-            objUser.UpdateUserAdminUser(txtUserName.Text, Convert.ToString(Session["CompanyName"]), txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtPostCode.Text, chksActive.Checked, AgentID, UrlUserID, UrlUserID,chkallowaddingUsers.Checked,chkallowingBidders.Checked,chkallowlisting.Checked);
+            objUser.UpdateUserSuperAdmin(txtUserName.Text, Convert.ToString(Session["CompanyName"]), txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtPostCode.Text, txtEmail.Text, chksActive.Checked, AgentID, UrlUserID, UrlUserID);
         }
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("DefaultUsers.aspx#add-region-tab");
+            Response.Redirect("BidderDefault.aspx#add-region-tab");
         }
         private bool IsUserExists(string username)
         {
@@ -95,7 +93,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
                 }
 
                 SaveUser(agentID);
-                Response.Redirect("DefaultUsers.aspx#add-region-tab");
+                Response.Redirect("BidderDefault.aspx#add-region-tab");
             }
             else
             {

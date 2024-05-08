@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlmanackAuctionsWebApp.UserManagement
-{
-
-
-    public partial class FormBiddersEdit
-    {
-
+namespace AlmanackAuctionsWebApp.UserManagement {
+    
+    
+    public partial class BiddersFormEdit {
+        
         /// <summary>
         /// pagetitle control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl pagetitle;
-
+        
         /// <summary>
         /// lblErrorMessage control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblErrorMessage;
-
+        
         /// <summary>
         /// txtUserName control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUserName;
-
+        
         /// <summary>
         /// txtFirstName control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFirstName;
-
+        
         /// <summary>
         /// txtLastName control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLastName;
-
+        
         /// <summary>
         /// txtAddress control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAddress;
-
+        
         /// <summary>
         /// txtPostCode control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPostCode;
-
+        
         /// <summary>
         /// DivEmail control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivEmail;
-
+        
         /// <summary>
         /// txtEmail control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-
+        
         /// <summary>
         /// regEmail control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regEmail;
-
+        
         /// <summary>
         /// chksActive control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chksActive;
-
+        
         /// <summary>
         /// btnSave control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
-
+        
         /// <summary>
         /// btnCancel control.
         /// </summary>

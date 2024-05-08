@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlmanackAuctionsWebApp.UserManagement
-{
-
-
-    public partial class DefaultUsers
-    {
-
+namespace AlmanackAuctionsWebApp.UserManagement {
+    
+    
+    public partial class BidderDefault {
+        
         /// <summary>
         /// txtSearch control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSearch;
-
+        
         /// <summary>
         /// btnSearch control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-
+        
         /// <summary>
         /// ddlPageSize control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPageSize;
-
+        
         /// <summary>
         /// gvMain control.
         /// </summary>

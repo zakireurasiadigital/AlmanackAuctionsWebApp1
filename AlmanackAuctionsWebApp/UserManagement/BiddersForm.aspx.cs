@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace AlmanackAuctionsWebApp.UserManagement
 {
-    public partial class FormBiddersEdit : System.Web.UI.Page
+    public partial class BiddersForm : System.Web.UI.Page
     {
         int UserID;
         tblusers objUser = new tblusers();
@@ -27,6 +27,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
             {
                 if (UrlUserID > 0)
                 {
+                    DivPassWord.Visible = false;
                     Edit();
                     btnSave.Text = "Update";
                 }
@@ -37,26 +38,69 @@ namespace AlmanackAuctionsWebApp.UserManagement
         {
             DataTable dt = objUser.GetUserDetailsForEdit(UrlUserID);
             txtUserName.Text = dt.Rows[0]["UserName"].ToString();
+            txtPassword.Text = dt.Rows[0]["Password"].ToString();
             txtFirstName.Text = dt.Rows[0]["FirstName"].ToString();
             txtLastName.Text = dt.Rows[0]["LastName"].ToString();
             txtAddress.Text = dt.Rows[0]["Address"].ToString();
             txtPostCode.Text = dt.Rows[0]["PostCode"].ToString();
-            txtEmail.Text = dt.Rows[0]["Email"].ToString();
-            chksActive.Checked = Convert.ToBoolean(dt.Rows[0]["IsActive"]);
 
         }
         void SaveUser(int AgentID)
         {
-            objUser.UpdateUserSuperAdmin(txtUserName.Text, Convert.ToString(Session["CompanyName"]), txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtPostCode.Text, txtEmail.Text, chksActive.Checked, AgentID, UrlUserID, UrlUserID);
+            objUser.UserID = UrlUserID;
+            objUser.UserName = txtUserName.Text;
+            objUser.Password = txtPassword.Text;
+            objUser.FirstName = txtFirstName.Text;
+            objUser.LastName = txtLastName.Text;
+            objUser.CompanyName = Convert.ToString(Session["CompanyName"]);
+            objUser.Address = txtAddress.Text;
+            objUser.Postcode = txtPostCode.Text;
+            objUser.Email = txtEmail.Text;
+            objUser.DateAdded = UrlUserID > 0 ? Convert.ToDateTime(objUser.GetDateAdded(UrlUserID)) : DateTime.Now;
+            objUser.IsActive = true;
+            objUser.AgentUserID = RoleID != 1 ? UserID : 0;
+            objUser.AgentID = AgentID;
+            objUser.UpdateByUserID = UrlUserID > 0 ? UserID : 0;
+            objUser.AgentUserType = 2;
+            objUser.DateUpdated = UrlUserID > 0 ? DateTime.Now : default(DateTime?);
+            objUser.isAgnetUser_Listing_Allowed =false;
+            objUser.isAgnetUser_Bidder_Allowed = true;
+            objUser.is_Listing_Allowed = false;
+
+
+            try
+            {
+                //aa=aa
+                objUser.SaveUser();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
+        void SaveRole()
+        {
+            objUserRole.UserRoleID = 0;
+            objUserRole.UserID = (int)objUser.GetID();
+            objUserRole.RoleID = 4;
+            objUserRole.isActive = true;
+            objUserRole.SaveData();
+        }
+
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("DefaultBidder.aspx#add-region-tab");
+            Response.Redirect("BidderDefault.aspx#add-region-tab");
         }
-        private bool IsUserExists(string username)
+        private bool IsUserExists(string username, string email)
         {
             DataTable dtUser = objUser.CheckUserNameExist(username, UrlUserID);
             if (dtUser != null && dtUser.Rows.Count > 0)
+            {
+                return true;
+            }
+
+            DataTable dtEmail = objUser.CheckEmailExist(email, UrlUserID);
+            if (dtEmail != null && dtEmail.Rows.Count > 0)
             {
                 return true;
             }
@@ -67,15 +111,15 @@ namespace AlmanackAuctionsWebApp.UserManagement
         {
             if (Page.IsValid)
             {
-                if (txtUserName.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" || txtPostCode.Text == "")
+                if (txtUserName.Text == "" || txtPassword.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" || txtPostCode.Text == "" || txtEmail.Text == "")
                 {
                     lblErrorMessage.Text = "Please fill in all required fields.";
                     return;
                 }
 
-                if (IsUserExists(txtUserName.Text))
+                if (IsUserExists(txtUserName.Text, txtEmail.Text))
                 {
-                    lblErrorMessage.Text = "Username already exists.";
+                    lblErrorMessage.Text = "Username or email already exists.";
                     return;
                 }
 
@@ -93,7 +137,12 @@ namespace AlmanackAuctionsWebApp.UserManagement
                 }
 
                 SaveUser(agentID);
-                Response.Redirect("DefaultBidder.aspx#add-region-tab");
+                if (UrlUserID == 0)
+                {
+                    SaveRole();
+                }
+
+                Response.Redirect("BidderDefault.aspx#add-region-tab");
             }
             else
             {

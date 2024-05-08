@@ -28,11 +28,11 @@ namespace AlmanackAuctionsWebApp.UserManagement
         {
             if (UserType == "AdminUser")
             {
-                Response.Redirect("DefaultUsers.aspx#add-region-tab");
+                Response.Redirect("UsersDefault.aspx#add-region-tab");
             }
             else if (UserType == "Bidder")
             {
-                Response.Redirect("DefaultBidder.aspx#add-region-tab");
+                Response.Redirect("BidderDefault.aspx#add-region-tab");
             }
             else if (UserType == "Superadmin")
             {
@@ -51,11 +51,11 @@ namespace AlmanackAuctionsWebApp.UserManagement
 
                 if (UserType == "AdminUser")
                 {
-                    Response.Redirect("DefaultUsers.aspx#add-region-tab");
+                    Response.Redirect("UsersDefault.aspx#add-region-tab");
                 }
                 else if (UserType == "Bidder")
                 {
-                    Response.Redirect("DefaultBidder.aspx#add-region-tab");
+                    Response.Redirect("BidderDefault.aspx#add-region-tab");
                 }
                 else if (UserType == "Superadmin")
                 {

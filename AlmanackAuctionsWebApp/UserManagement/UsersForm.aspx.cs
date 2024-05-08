@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace AlmanackAuctionsWebApp.UserManagement
 {
-    public partial class FormUsers : System.Web.UI.Page
+    public partial class UsersForm : System.Web.UI.Page
     {
         int UserID;
         tblusers objUser = new tblusers();
@@ -92,7 +92,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("DefaultUsers.aspx#add-region-tab");
+            Response.Redirect("UsersDefault.aspx#add-region-tab");
         }
         private bool IsUserExists(string username)
         {
@@ -139,7 +139,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
                     SaveRole();
                 }
 
-                Response.Redirect("DefaultUsers.aspx#add-region-tab");
+                Response.Redirect("UsersDefault.aspx#add-region-tab");
             }
             else
             {

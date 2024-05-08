@@ -11,7 +11,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
 {
 
 
-    public partial class DefaultBidder
+    public partial class UsersDefault
     {
 
         /// <summary>
