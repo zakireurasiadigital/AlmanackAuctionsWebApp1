@@ -8,18 +8,14 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
 namespace AlmanackAuctionsWebApp.UserManagement
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class BidderDefault : System.Web.UI.Page
     {
         tblusers objUser = new tblusers();
         int UserID, RoleID;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string ff = string.Empty;
-            ff = cFunction.Encrypt("eee");
-
             UserID = Convert.ToInt32(Session["UserId"]);
             RoleID = Convert.ToInt32(Session["RoleID"]);
             if (!IsPostBack)
@@ -31,7 +27,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
 
         private void BindGridView()
         {
-            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID, "0");
+            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID, "2");
             if (dt != null && dt.Rows.Count > 0)
             {
                 gvMain.DataSource = dt;
@@ -40,7 +36,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         }
         protected void gvMain_Sorting(object sender, GridViewSortEventArgs e)
         {
-            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID, "0");
+            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID, "2");
             if (dt != null)
             {
                 dt.DefaultView.Sort = e.SortExpression + " " + GetSortDirection(e.SortExpression);
@@ -50,7 +46,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
         }
         private void BindGridViewForSearch()
         {
-            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID, "0");
+            DataTable dt = objUser.GetUserDetailsForView(RoleID, UserID, "2");
             if (dt != null)
             {
                 string searchValue = txtSearch.Text.Trim();

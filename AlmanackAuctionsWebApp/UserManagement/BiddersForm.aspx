@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Form.aspx.cs" Inherits="AlmanackAuctionsWebApp.UserManagement.Form" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="BiddersForm.aspx.cs" Inherits="AlmanackAuctionsWebApp.UserManagement.BiddersForm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -91,36 +91,32 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-md-6" id="DivCompnayName" runat="server" visible="true">
-                                    <label for="lblCompanyName">Company Name</label>
-                                    <asp:TextBox ID="txtCompanyName" runat="server" placeholder="Company Name" CssClass="form-control"></asp:TextBox>
-                                </div>
                                 <div class="col-md-6">
                                     <label for="lblFirstName">First Name</label>
                                     <asp:TextBox ID="txtFirstName" runat="server" placeholder="First Name" CssClass="form-control"></asp:TextBox>
                                 </div>
-                            </div>
-                            <div class="form-group row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="txtLastName">Last Name</label>
                                         <asp:TextBox ID="txtLastName" runat="server" placeholder="Last Name" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="form-group row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="txtAddress">Address</label>
                                         <asp:TextBox ID="txtAddress" runat="server" placeholder="Address" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="txtPostCode">Post Code</label>
                                         <asp:TextBox ID="txtPostCode" runat="server" placeholder="Post Code" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="form-group row">
                                 <div class="col-md-6" id="DivEmail" runat="server" visible="true">
                                     <div class="form-group">
                                         <label for="txtPostCode">Email </label>
@@ -133,10 +129,6 @@
 
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group" id="DivIsActive" runat="server" visible="false">
-                                <label for="txtPostCode">Is Active?</label>
-                                <asp:CheckBox ID="chkIsActive" runat="server"></asp:CheckBox>
                             </div>
                             <!-- Buttons -->
                             <div class="btn-group" style="margin-top: 5px;">

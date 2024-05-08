@@ -125,6 +125,36 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
 
         }
 
+        public  DataTable GetDataTable2(string strSql)
+        {
+
+            // Declare Objects locally
+            SqlConnection objSqlConnection = new SqlConnection();
+            SqlCommand objSqlCommand = default(SqlCommand);
+            DataTable objDataTable = new DataTable();
+            SqlDataAdapter objSqlDataAdapter = default(SqlDataAdapter);
+
+            try
+            {
+                this.OpenConnection(ref objSqlConnection);
+                objSqlCommand = new SqlCommand(strSql, objSqlConnection);
+                objSqlCommand.CommandTimeout = 5000;
+                objSqlDataAdapter = new SqlDataAdapter(objSqlCommand);
+                objSqlDataAdapter.Fill(objDataTable);
+                return objDataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+
+                objSqlConnection.Close();
+            }
+
+        }
+
         // Function thar returns the Data Reader after executing a particular query
         protected SqlDataReader GetDataReader(string strSql)
         {

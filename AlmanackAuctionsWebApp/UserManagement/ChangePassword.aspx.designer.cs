@@ -7,54 +7,56 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlmanackAuctionsWebApp {
-    
-    
-    public partial class MasterPage {
-        
+namespace AlmanackAuctionsWebApp.UserManagement
+{
+
+
+    public partial class ChangePassword
+    {
+
         /// <summary>
-        /// head control.
+        /// Panel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-        
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+
         /// <summary>
-        /// MasterPageBodyTag control.
+        /// txtNewPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MasterPageBodyTag;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtNewPassword;
+
         /// <summary>
-        /// frmMain control.
+        /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm frmMain;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
+
         /// <summary>
-        /// imgLogo control.
+        /// btnCloseModal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgLogo;
-        
+        protected global::System.Web.UI.WebControls.Button btnCloseModal;
+
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// btnSaveChanges control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btnSaveChanges;
     }
 }

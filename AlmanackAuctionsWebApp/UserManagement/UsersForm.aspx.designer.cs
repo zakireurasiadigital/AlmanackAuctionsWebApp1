@@ -10,7 +10,7 @@
 namespace AlmanackAuctionsWebApp.UserManagement {
     
     
-    public partial class Form {
+    public partial class UsersForm {
         
         /// <summary>
         /// pagetitle control.
@@ -58,24 +58,6 @@ namespace AlmanackAuctionsWebApp.UserManagement {
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
-        /// DivCompnayName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivCompnayName;
-        
-        /// <summary>
-        /// txtCompanyName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCompanyName;
-        
-        /// <summary>
         /// txtFirstName control.
         /// </summary>
         /// <remarks>
@@ -112,49 +94,31 @@ namespace AlmanackAuctionsWebApp.UserManagement {
         protected global::System.Web.UI.WebControls.TextBox txtPostCode;
         
         /// <summary>
-        /// DivEmail control.
+        /// chkallowlisting control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivEmail;
+        protected global::System.Web.UI.WebControls.CheckBox chkallowlisting;
         
         /// <summary>
-        /// txtEmail control.
+        /// chkallowaddingUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.CheckBox chkallowaddingUsers;
         
         /// <summary>
-        /// regEmail control.
+        /// chkallowingBidders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regEmail;
-        
-        /// <summary>
-        /// DivIsActive control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivIsActive;
-        
-        /// <summary>
-        /// chkIsActive control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkIsActive;
+        protected global::System.Web.UI.WebControls.CheckBox chkallowingBidders;
         
         /// <summary>
         /// btnSave control.

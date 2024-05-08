@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AlmanackAuctionsWebApp.App_Start.Clasess;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,7 +11,8 @@ namespace AlmanackAuctionsWebApp
 {
     public partial class Default : System.Web.UI.Page
     {
-        int UserID, RoleID;
+        public int UserID, RoleID;
+        tblusers objUser = new tblusers();
         protected void Page_Load(object sender, EventArgs e)
         {
             UserID = Convert.ToInt32(Session["UserId"]);
@@ -21,18 +24,38 @@ namespace AlmanackAuctionsWebApp
                     btnUsers.Visible = false;
                     btnListings.Visible = false;
                     btnAdminUsers.Visible = true;
+                    btnAddBidders.Visible = false;
                 }
                 else if (RoleID == 2)
                 {
                     btnUsers.Visible = true;
                     btnListings.Visible = true;
+                    btnAddBidders.Visible = true;
                     btnAdminUsers.Visible = false;
                 }
                 else if (RoleID == 3)
                 {
+                    DataTable userData = objUser.RetrieveUserData(UserID);
+                    if (userData != null && userData.Rows.Count > 0)
+                    {
+                        bool isListingAllowed = Convert.ToBoolean(userData.Rows[0]["is_Listing_Allowed"]);
+                        btnListings.Visible = isListingAllowed;
+
+                        bool isUserListingAllowed = Convert.ToBoolean(userData.Rows[0]["isAgnetUser_Listing_Allowed"]);
+                        btnUsers.Visible = isUserListingAllowed;
+
+                        bool isBidderAllowed = Convert.ToBoolean(userData.Rows[0]["isAgnetUser_Bidder_Allowed"]);
+                        btnAddBidders.Visible = isBidderAllowed;
+
+                        btnAdminUsers.Visible = false;
+                    }
+                }
+                else if (RoleID == 4)
+                {
                     btnUsers.Visible = false;
                     btnListings.Visible = true;
                     btnAdminUsers.Visible = false;
+                    btnAddBidders.Visible = false;
                 }
             }
         }
@@ -44,7 +67,12 @@ namespace AlmanackAuctionsWebApp
 
         protected void btnUsers_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/UserManagement/Default.aspx");
+            Response.Redirect("~/UserManagement/UsersDefault.aspx");
+        }
+
+        protected void btnAddBidders_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/UserManagement/BidderDefault.aspx");
         }
 
         protected void btnAdminUsers_Click(object sender, EventArgs e)
