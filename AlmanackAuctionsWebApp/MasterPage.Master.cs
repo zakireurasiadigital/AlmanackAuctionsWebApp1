@@ -43,5 +43,6 @@ namespace AlmanackAuctionsWebApp
             CompanyName = Convert.ToString(Session["CompanyName"]);
 
         }
+
     }
 }
