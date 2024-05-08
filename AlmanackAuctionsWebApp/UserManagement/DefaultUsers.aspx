@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="DefaultUsers.aspx.cs" Inherits="AlmanackAuctionsWebApp.UserManagement.DefaultUsers" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <style>
@@ -171,6 +172,13 @@
                         <ItemTemplate>
                             <asp:LinkButton ID="lbtnEdit" PostBackUrl='<%# Eval("UserID", "~/UserManagement/FormUsersEdit.aspx?i={0}") %>' runat="server">
                     <i class="fas fa-pencil-alt" style="color: seagreen;" title="Click here to edit" ></i>
+                            </asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Change Password" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="btnChangePassword" PostBackUrl='<%# Eval("UserID", "~/UserManagement/ChangePassword.aspx?i={0}&UserType=AdminUser") %>' runat="server">
+ <i class="fas fa-key" style="color: seagreen;" title="Click here to Change Password" ></i>
                             </asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>

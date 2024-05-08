@@ -174,6 +174,13 @@
                             </asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Change Password" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="btnChangePassword" PostBackUrl='<%# Eval("UserID", "~/UserManagement/ChangePassword.aspx?i={0}&UserType=Bidder") %>' runat="server">
+ <i class="fas fa-key" style="color: seagreen;" title="Click here to Change Password" ></i>
+                            </asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
                 <PagerSettings Mode="Numeric" FirstPageText="First" LastPageText="Last" Position="Bottom" />
                 <PagerStyle HorizontalAlign="Right" CssClass="pagination-ys" />
