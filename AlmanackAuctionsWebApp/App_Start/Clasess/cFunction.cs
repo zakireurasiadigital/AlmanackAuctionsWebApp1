@@ -158,8 +158,7 @@ namespace AlmanackAuctionsWebApp.App_Start.Clasess
                 return "";
             }
         }
-
-
+        
         public static DataTable GetDataTable(string Str)
         {
             try

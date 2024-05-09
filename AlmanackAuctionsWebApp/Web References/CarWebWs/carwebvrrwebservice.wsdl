@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.carwebuk.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws.carwebuk.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ws.carwebuk.com">
+      <s:element name="strB2BGetVehicleByVRM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClientRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClientDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVRM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVersion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="strB2BGetVehicleByVRMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BGetVehicleByVRMResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="strB2BGetVehicleByVIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClientRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClientDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVersion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="strB2BGetVehicleByVINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BGetVehicleByVINResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="strB2BGetVehicleByVRMSoapIn">
+    <wsdl:part name="parameters" element="tns:strB2BGetVehicleByVRM" />
+  </wsdl:message>
+  <wsdl:message name="strB2BGetVehicleByVRMSoapOut">
+    <wsdl:part name="parameters" element="tns:strB2BGetVehicleByVRMResponse" />
+  </wsdl:message>
+  <wsdl:message name="strB2BGetVehicleByVINSoapIn">
+    <wsdl:part name="parameters" element="tns:strB2BGetVehicleByVIN" />
+  </wsdl:message>
+  <wsdl:message name="strB2BGetVehicleByVINSoapOut">
+    <wsdl:part name="parameters" element="tns:strB2BGetVehicleByVINResponse" />
+  </wsdl:message>
+  <wsdl:message name="strB2BGetVehicleByVRMHttpGetIn">
+    <wsdl:part name="strUserName" type="s:string" />
+    <wsdl:part name="strPassword" type="s:string" />
+    <wsdl:part name="strClientRef" type="s:string" />
+    <wsdl:part name="strClientDescription" type="s:string" />
+    <wsdl:part name="strKey1" type="s:string" />
+    <wsdl:part name="strVRM" type="s:string" />
+    <wsdl:part name="strVersion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="strB2BGetVehicleByVRMHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="strB2BGetVehicleByVINHttpGetIn">
+    <wsdl:part name="strUserName" type="s:string" />
+    <wsdl:part name="strPassword" type="s:string" />
+    <wsdl:part name="strClientRef" type="s:string" />
+    <wsdl:part name="strClientDescription" type="s:string" />
+    <wsdl:part name="strKey1" type="s:string" />
+    <wsdl:part name="strVIN" type="s:string" />
+    <wsdl:part name="strVersion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="strB2BGetVehicleByVINHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="strB2BGetVehicleByVRMHttpPostIn">
+    <wsdl:part name="strUserName" type="s:string" />
+    <wsdl:part name="strPassword" type="s:string" />
+    <wsdl:part name="strClientRef" type="s:string" />
+    <wsdl:part name="strClientDescription" type="s:string" />
+    <wsdl:part name="strKey1" type="s:string" />
+    <wsdl:part name="strVRM" type="s:string" />
+    <wsdl:part name="strVersion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="strB2BGetVehicleByVRMHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="strB2BGetVehicleByVINHttpPostIn">
+    <wsdl:part name="strUserName" type="s:string" />
+    <wsdl:part name="strPassword" type="s:string" />
+    <wsdl:part name="strClientRef" type="s:string" />
+    <wsdl:part name="strClientDescription" type="s:string" />
+    <wsdl:part name="strKey1" type="s:string" />
+    <wsdl:part name="strVIN" type="s:string" />
+    <wsdl:part name="strVersion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="strB2BGetVehicleByVINHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="CarweBVRRWebServiceSoap">
+    <wsdl:operation name="strB2BGetVehicleByVRM">
+      <wsdl:input message="tns:strB2BGetVehicleByVRMSoapIn" />
+      <wsdl:output message="tns:strB2BGetVehicleByVRMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="strB2BGetVehicleByVIN">
+      <wsdl:input message="tns:strB2BGetVehicleByVINSoapIn" />
+      <wsdl:output message="tns:strB2BGetVehicleByVINSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CarweBVRRWebServiceHttpGet">
+    <wsdl:operation name="strB2BGetVehicleByVRM">
+      <wsdl:input message="tns:strB2BGetVehicleByVRMHttpGetIn" />
+      <wsdl:output message="tns:strB2BGetVehicleByVRMHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="strB2BGetVehicleByVIN">
+      <wsdl:input message="tns:strB2BGetVehicleByVINHttpGetIn" />
+      <wsdl:output message="tns:strB2BGetVehicleByVINHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CarweBVRRWebServiceHttpPost">
+    <wsdl:operation name="strB2BGetVehicleByVRM">
+      <wsdl:input message="tns:strB2BGetVehicleByVRMHttpPostIn" />
+      <wsdl:output message="tns:strB2BGetVehicleByVRMHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="strB2BGetVehicleByVIN">
+      <wsdl:input message="tns:strB2BGetVehicleByVINHttpPostIn" />
+      <wsdl:output message="tns:strB2BGetVehicleByVINHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CarweBVRRWebServiceSoap" type="tns:CarweBVRRWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="strB2BGetVehicleByVRM">
+      <soap:operation soapAction="http://ws.carwebuk.com/strB2BGetVehicleByVRM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strB2BGetVehicleByVIN">
+      <soap:operation soapAction="http://ws.carwebuk.com/strB2BGetVehicleByVIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CarweBVRRWebServiceSoap12" type="tns:CarweBVRRWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="strB2BGetVehicleByVRM">
+      <soap12:operation soapAction="http://ws.carwebuk.com/strB2BGetVehicleByVRM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strB2BGetVehicleByVIN">
+      <soap12:operation soapAction="http://ws.carwebuk.com/strB2BGetVehicleByVIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CarweBVRRWebServiceHttpGet" type="tns:CarweBVRRWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="strB2BGetVehicleByVRM">
+      <http:operation location="/strB2BGetVehicleByVRM" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strB2BGetVehicleByVIN">
+      <http:operation location="/strB2BGetVehicleByVIN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CarweBVRRWebServiceHttpPost" type="tns:CarweBVRRWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="strB2BGetVehicleByVRM">
+      <http:operation location="/strB2BGetVehicleByVRM" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strB2BGetVehicleByVIN">
+      <http:operation location="/strB2BGetVehicleByVIN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CarweBVRRWebService">
+    <wsdl:port name="CarweBVRRWebServiceSoap" binding="tns:CarweBVRRWebServiceSoap">
+      <soap:address location="https://ws.carwebuk.com/CarweBVRRB2Bproxy/carwebvrrwebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CarweBVRRWebServiceSoap12" binding="tns:CarweBVRRWebServiceSoap12">
+      <soap12:address location="https://ws.carwebuk.com/CarweBVRRB2Bproxy/carwebvrrwebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CarweBVRRWebServiceHttpGet" binding="tns:CarweBVRRWebServiceHttpGet">
+      <http:address location="https://ws.carwebuk.com/CarweBVRRB2Bproxy/carwebvrrwebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CarweBVRRWebServiceHttpPost" binding="tns:CarweBVRRWebServiceHttpPost">
+      <http:address location="https://ws.carwebuk.com/CarweBVRRB2Bproxy/carwebvrrwebservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -11,9 +11,10 @@ namespace AlmanackAuctionsWebApp
 {
     public partial class MasterPage : System.Web.UI.MasterPage
     {
-        public int UserId, RoleId;
+        public int UserId, RoleId, AgentID;
         string CompanyName;
         protected int mintTimeout;
+        public string DisplayName = "";
         protected void Page_Init(object sender, System.EventArgs e)
         {
             if (Session["UserID"] == null)
@@ -22,8 +23,8 @@ namespace AlmanackAuctionsWebApp
             }
             else
             {
-                UserId = Convert.ToInt32(Session["UserId"]);
-                DataTable dt = cFunction.GetDataTable("Select * from tblSiteConfiguration where AgentUserID=" + UserId.ToString());
+                AgentID = Convert.ToInt32(Session["AgentID"]);
+                DataTable dt = cFunction.GetDataTable("Select * from tblSiteConfiguration where AgentID=" + AgentID.ToString());
                 if (dt.Rows.Count > 0)
                 {
                     if (dt.Rows[0]["SiteHeaderLogoURL"] != null)
@@ -33,8 +34,6 @@ namespace AlmanackAuctionsWebApp
 
                 }
             }
-
-
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,6 +41,22 @@ namespace AlmanackAuctionsWebApp
             RoleId = Convert.ToInt32(Session["RoleID"]);
             CompanyName = Convert.ToString(Session["CompanyName"]);
 
+            if ( RoleId==1)
+            {
+                DisplayName = Convert.ToString(Session["CompanyName"]);
+            }
+            else if (RoleId == 2)
+            {
+                DisplayName = Convert.ToString(Session["CompanyName"]);
+            }
+            else if (RoleId == 3)
+            {
+                DisplayName = Convert.ToString(Session["FirstName"]);
+            }
+            else if (RoleId == 4)
+            {
+                DisplayName = Convert.ToString(Session["CompanyName"]);
+            }
         }
 
     }

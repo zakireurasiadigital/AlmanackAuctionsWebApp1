@@ -140,7 +140,7 @@ namespace AlmanackAuctionsWebApp.UserManagement
 
                 DataTable dt = objUser.GetAgentID(txtCompanyName.Text);
                 int agentID = 0;
-                if (dt == null)
+                if (dt.Rows.Count > 0)
                 {
                     agentID = Convert.ToInt32(dt.Rows[0]["AgentID"]);
                 }

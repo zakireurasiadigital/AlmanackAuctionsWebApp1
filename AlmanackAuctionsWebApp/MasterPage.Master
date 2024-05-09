@@ -103,7 +103,7 @@
                                 <li class="nav-item d-xl-block">
                                     <div class="dropdown">
                                         <button class="btn btn-primary dropdown-toggle" style="margin-top: auto;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Welcome, <% Response.Write(Session["CompanyName"]); %>
+                                          <%=DisplayName.ToString().ToUpper()%>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                              <% if (RoleId == 1) { %>

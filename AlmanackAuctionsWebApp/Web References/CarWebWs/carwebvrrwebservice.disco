@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://ws.carwebuk.com/CarweBVRRB2Bproxy/carwebvrrwebservice.asmx?wsdl" docRef="https://ws.carwebuk.com/CarweBVRRB2Bproxy/carwebvrrwebservice.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://ws.carwebuk.com/CarweBVRRB2Bproxy/carwebvrrwebservice.asmx" xmlns:q1="http://ws.carwebuk.com" binding="q1:CarweBVRRWebServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://ws.carwebuk.com/CarweBVRRB2Bproxy/carwebvrrwebservice.asmx" xmlns:q2="http://ws.carwebuk.com" binding="q2:CarweBVRRWebServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

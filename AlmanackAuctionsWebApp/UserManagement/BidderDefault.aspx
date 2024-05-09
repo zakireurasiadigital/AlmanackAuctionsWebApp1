@@ -169,7 +169,7 @@
                     <asp:BoundField DataField="DateAdded" HeaderText="Created On" DataFormatString="{0:dd/MM/yyyy}" SortExpression="DateAdded" ItemStyle-HorizontalAlign="Center" />
                     <asp:TemplateField HeaderText="Edit" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
-                            <asp:LinkButton ID="lbtnEdit" PostBackUrl='<%# Eval("UserID", "~/UserManagement/BiddersForm_edit.aspx?i={0}") %>' runat="server">
+                            <asp:LinkButton ID="lbtnEdit" PostBackUrl='<%# Eval("UserID", "~/UserManagement/BiddersFormEdit.aspx?i={0}") %>' runat="server">
                     <i class="fas fa-pencil-alt" style="color: seagreen;" title="Click here to edit" ></i>
                             </asp:LinkButton>
                         </ItemTemplate>

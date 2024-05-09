@@ -30,6 +30,7 @@ namespace AlmanackAuctionsWebApp
                 Session["FirstName"] = dt.Rows[0]["FirstName"].ToString();
                 Session["LastName"] = dt.Rows[0]["LastName"].ToString();
                 Session["CompanyName"] = dt.Rows[0]["CompanyName"].ToString();
+                Session["AgentID"] = dt.Rows[0]["AgentID"].ToString();
                 objtblusers.InsertLoginUser(UserID, dt.Rows[0]["UserName"].ToString());
                 Response.Redirect("Default.aspx");
             }
